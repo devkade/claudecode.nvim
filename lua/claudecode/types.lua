@@ -29,7 +29,7 @@
 ---@alias ClaudeCodeLogLevel "trace"|"debug"|"info"|"warn"|"error"
 
 -- Terminal split side positioning
----@alias ClaudeCodeSplitSide "left"|"right"
+---@alias ClaudeCodeSplitSide "left"|"right"|"bottom"
 
 -- In-tree terminal provider names
 ---@alias ClaudeCodeTerminalProviderName "auto"|"snacks"|"native"|"external"

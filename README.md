@@ -14,11 +14,11 @@
 
 When Anthropic released Claude Code, they only supported VS Code and JetBrains. As a Neovim user, I wanted the same experience — so I reverse-engineered their extension and built this.
 
-- 🚀 **Pure Lua, Zero Dependencies** — Built entirely with `vim.loop` and Neovim built-ins
-- 🔌 **100% Protocol Compatible** — Same WebSocket MCP implementation as official extensions
-- 🎓 **Fully Documented Protocol** — Learn how to build your own integrations ([see PROTOCOL.md](./PROTOCOL.md))
-- ⚡ **First to Market** — Beat Anthropic to releasing Neovim support
-- 🛠️ **Built with AI** — Used Claude to reverse-engineer Claude's own protocol
+-   🚀 **Pure Lua, Zero Dependencies** — Built entirely with `vim.loop` and Neovim built-ins
+-   🔌 **100% Protocol Compatible** — Same WebSocket MCP implementation as official extensions
+-   🎓 **Fully Documented Protocol** — Learn how to build your own integrations ([see PROTOCOL.md](./PROTOCOL.md))
+-   ⚡ **First to Market** — Beat Anthropic to releasing Neovim support
+-   🛠️ **Built with AI** — Used Claude to reverse-engineer Claude's own protocol
 
 ## Installation
 
@@ -53,9 +53,9 @@ That's it! The plugin will auto-configure everything else.
 
 ## Requirements
 
-- Neovim >= 0.8.0
-- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed
-- [folke/snacks.nvim](https://github.com/folke/snacks.nvim) for enhanced terminal support
+-   Neovim >= 0.8.0
+-   [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed
+-   [folke/snacks.nvim](https://github.com/folke/snacks.nvim) for enhanced terminal support
 
 ## Local Installation Configuration
 
@@ -65,9 +65,9 @@ If you've used Claude Code's `migrate-installer` command to move to a local inst
 
 Claude Code offers a `claude migrate-installer` command that:
 
-- Moves Claude Code from a global npm installation to `~/.claude/local/`
-- Avoids permission issues with system directories
-- Creates shell aliases but these may not be available to Neovim
+-   Moves Claude Code from a global npm installation to `~/.claude/local/`
+-   Avoids permission issues with system directories
+-   Creates shell aliases but these may not be available to Neovim
 
 ### Detecting Your Installation Type
 
@@ -121,15 +121,15 @@ claude install
 
 #### Platform Support
 
-- **macOS**: Full support for Intel and Apple Silicon
-- **Linux**: x64 and arm64 architectures
-- **Windows**: Via WSL (Windows Subsystem for Linux)
+-   **macOS**: Full support for Intel and Apple Silicon
+-   **Linux**: x64 and arm64 architectures
+-   **Windows**: Via WSL (Windows Subsystem for Linux)
 
 #### Benefits
 
-- **Zero Dependencies**: Single executable file with no external requirements
-- **Cross-Platform**: Consistent experience across operating systems
-- **Secure Installation**: Includes checksum verification and automatic cleanup
+-   **Zero Dependencies**: Single executable file with no external requirements
+-   **Cross-Platform**: Consistent experience across operating systems
+-   **Secure Installation**: Includes checksum verification and automatic cleanup
 
 #### Configuring for Native Binary
 
@@ -181,30 +181,30 @@ Configure the plugin with the detected path:
 
 1. **Launch Claude**: Run `:ClaudeCode` to open Claude in a split terminal
 2. **Send context**:
-   - Select text in visual mode and use `<leader>as` to send it to Claude
-   - In `nvim-tree`/`neo-tree`/`oil.nvim`/`mini.nvim`, press `<leader>as` on a file to add it to Claude's context
+    - Select text in visual mode and use `<leader>as` to send it to Claude
+    - In `nvim-tree`/`neo-tree`/`oil.nvim`/`mini.nvim`, press `<leader>as` on a file to add it to Claude's context
 3. **Let Claude work**: Claude can now:
-   - See your current file and selections in real-time
-   - Open files in your editor
-   - Show diffs with proposed changes
-   - Access diagnostics and workspace info
+    - See your current file and selections in real-time
+    - Open files in your editor
+    - Show diffs with proposed changes
+    - Access diagnostics and workspace info
 
 ## Key Commands
 
-- `:ClaudeCode` - Toggle the Claude Code terminal window
-- `:ClaudeCodeFocus` - Smart focus/toggle Claude terminal
-- `:ClaudeCodeSelectModel` - Select Claude model and open terminal with optional arguments
-- `:ClaudeCodeSend` - Send current visual selection to Claude
-- `:ClaudeCodeAdd <file-path> [start-line] [end-line]` - Add specific file to Claude context with optional line range
-- `:ClaudeCodeDiffAccept` - Accept diff changes
-- `:ClaudeCodeDiffDeny` - Reject diff changes
+-   `:ClaudeCode` - Toggle the Claude Code terminal window
+-   `:ClaudeCodeFocus` - Smart focus/toggle Claude terminal
+-   `:ClaudeCodeSelectModel` - Select Claude model and open terminal with optional arguments
+-   `:ClaudeCodeSend` - Send current visual selection to Claude
+-   `:ClaudeCodeAdd <file-path> [start-line] [end-line]` - Add specific file to Claude context with optional line range
+-   `:ClaudeCodeDiffAccept` - Accept diff changes
+-   `:ClaudeCodeDiffDeny` - Reject diff changes
 
 ## Working with Diffs
 
 When Claude proposes changes, the plugin opens a native Neovim diff view:
 
-- **Accept**: `:w` (save) or `<leader>aa`
-- **Reject**: `:q` or `<leader>ad`
+-   **Accept**: `:w` (save) or `<leader>aa`
+-   **Reject**: `:q` or `<leader>ad`
 
 You can edit Claude's suggestions before accepting them.
 
@@ -226,11 +226,11 @@ The protocol uses a WebSocket-based variant of MCP (Model Context Protocol) that
 
 Built with pure Lua and zero external dependencies:
 
-- **WebSocket Server** - RFC 6455 compliant implementation using `vim.loop`
-- **MCP Protocol** - Full JSON-RPC 2.0 message handling
-- **Lock File System** - Enables Claude CLI discovery
-- **Selection Tracking** - Real-time context updates
-- **Native Diff Support** - Seamless file comparison
+-   **WebSocket Server** - RFC 6455 compliant implementation using `vim.loop`
+-   **MCP Protocol** - Full JSON-RPC 2.0 message handling
+-   **Lock File System** - Enables Claude CLI discovery
+-   **Selection Tracking** - Real-time context updates
+-   **Native Diff Support** - Seamless file comparison
 
 For deep technical details, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
@@ -255,7 +255,7 @@ For deep technical details, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
     -- Terminal Configuration
     terminal = {
-      split_side = "right", -- "left" or "right"
+      split_side = "right", -- "left", "right", "bottom"
       split_width_percentage = 0.30,
       provider = "auto", -- "auto", "snacks", "native", "external", or custom provider table
       auto_close = true,
@@ -442,8 +442,8 @@ snacks_win_opts = {
 
 For complete configuration options, see:
 
-- [Snacks.nvim Terminal Documentation](https://github.com/folke/snacks.nvim/blob/main/docs/terminal.md)
-- [Snacks.nvim Window Documentation](https://github.com/folke/snacks.nvim/blob/main/docs/win.md)
+-   [Snacks.nvim Terminal Documentation](https://github.com/folke/snacks.nvim/blob/main/docs/terminal.md)
+-   [Snacks.nvim Window Documentation](https://github.com/folke/snacks.nvim/blob/main/docs/win.md)
 
 ## Terminal Providers
 
@@ -587,10 +587,10 @@ The following are third-party community extensions that complement claudecode.nv
 
 Integrates fzf-lua's file selection with claudecode.nvim's context management:
 
-- Batch file selection with fzf-lua multi-select
-- Smart search integration with grep → Claude
-- Tree-sitter based context extraction
-- Support for files, buffers, git files
+-   Batch file selection with fzf-lua multi-select
+-   Smart search integration with grep → Claude
+-   Tree-sitter based context extraction
+-   Support for files, buffers, git files
 
 ### 📚 [claude-fzf-history.nvim](https://github.com/pittcat/claude-fzf-history.nvim)
 
@@ -681,11 +681,11 @@ opts = {
 
 ## Troubleshooting
 
-- **Claude not connecting?** Check `:ClaudeCodeStatus` and verify lock file exists in `~/.claude/ide/` (or `$CLAUDE_CONFIG_DIR/ide/` if `CLAUDE_CONFIG_DIR` is set)
-- **Need debug logs?** Set `log_level = "debug"` in opts
-- **Terminal issues?** Try `provider = "native"` if using snacks.nvim
-- **Local installation not working?** If you used `claude migrate-installer`, set `terminal_cmd = "~/.claude/local/claude"` in your config. Check `which claude` vs `ls ~/.claude/local/claude` to verify your installation type.
-- **Native binary installation not working?** If you used the alpha native binary installer, run `claude doctor` to verify installation health and use `which claude` to find the binary path. Set `terminal_cmd = "/path/to/claude"` with the detected path in your config.
+-   **Claude not connecting?** Check `:ClaudeCodeStatus` and verify lock file exists in `~/.claude/ide/` (or `$CLAUDE_CONFIG_DIR/ide/` if `CLAUDE_CONFIG_DIR` is set)
+-   **Need debug logs?** Set `log_level = "debug"` in opts
+-   **Terminal issues?** Try `provider = "native"` if using snacks.nvim
+-   **Local installation not working?** If you used `claude migrate-installer`, set `terminal_cmd = "~/.claude/local/claude"` in your config. Check `which claude` vs `ls ~/.claude/local/claude` to verify your installation type.
+-   **Native binary installation not working?** If you used the alpha native binary installer, run `claude doctor` to verify installation health and use `which claude` to find the binary path. Set `terminal_cmd = "/path/to/claude"` with the detected path in your config.
 
 ## Contributing
 
@@ -697,6 +697,6 @@ See [DEVELOPMENT.md](./DEVELOPMENT.md) for build instructions and development gu
 
 ## Acknowledgements
 
-- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) by Anthropic
-- Inspired by analyzing the official VS Code extension
-- Built with assistance from AI (how meta!)
+-   [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) by Anthropic
+-   Inspired by analyzing the official VS Code extension
+-   Built with assistance from AI (how meta!)

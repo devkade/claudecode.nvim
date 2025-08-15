@@ -396,6 +396,13 @@ describe("claudecode.terminal (wrapper for Snacks.nvim)", function()
       assert.are.equal(0.5, config_arg.split_width_percentage)
       vim.notify:was_called_with(spy.matching.string.match("Invalid value for split_side"), vim.log.levels.WARN)
     end)
+    it("should accept 'bottom' as valid split_side", function()
+      terminal_wrapper.setup({ split_side = "bottom", split_width_percentage = 0.5 })
+      terminal_wrapper.open()
+      local config_arg = mock_snacks_provider.open:get_call(1).refs[3]
+      assert.are.equal("bottom", config_arg.split_side)
+      assert.are.equal(0.5, config_arg.split_width_percentage)
+    end)
 
     it("should ignore invalid split_width_percentage and use default", function()
       terminal_wrapper.setup({ split_side = "left", split_width_percentage = 2.0 })
